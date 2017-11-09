@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
-const nodeexternals = require("webpack-node-externals");
+const nodeExternals = require("webpack-node-externals");
 const StartServerPlugin = require("start-server-webpack-plugin");
 
 module.exports = {
@@ -29,11 +29,13 @@ module.exports = {
         ],
         exclude: /node_modules/
       },
-      test: /\.(graphql|gql)$/,
-      exclude: /node_modules/,
-      use: {
-        loader: "raw-loader"
-      }
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "raw-loader"
+        }
+      },
     ]
   },
   plugins: [
@@ -44,7 +46,7 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": {BUILD_TARGET: JSON.stringify("server")}
     }),
-    new webpack.BannerPlugin({ banner: "require("source-map-support".install();)"})
+    new webpack.BannerPlugin({ banner: 'require("source-map-support".install();)'})
   ],
   output: {path: path.join(__dirname, "dist"), filename: "server.js"}
 };

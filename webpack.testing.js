@@ -37,14 +37,14 @@ module.exports = {
       },
       {
         test: /\.(graphql\gql)$/,
-        exlude: /node_modules/,
+        exclude: /node_modules/,
         use: {
           loader: "raw-loader"
         }
       },
       {
         test: /\.html$/,
-        exlude: /node_modules/,
+        exclude: /node_modules/,
         use: {
           loader: "raw-loader"
         }
