@@ -1,4 +1,4 @@
-import express = require("express");
+import express from "express";
 
 // routers
 import {userRouter} from "./resources/user";
